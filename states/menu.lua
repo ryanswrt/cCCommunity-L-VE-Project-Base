@@ -38,16 +38,17 @@ end
 function createButtons()
 	for i,v in ipairs( panels ) do
 		local button = goo.button:new()
-		button:setPos( 100, i*25 )
+		
 		button:setText( panels.name[i] )
 		button:sizeToText()
+		button:setPos( love.graphics.getWidth()/2-button:getAbsoluteSize()/2, -10 )
 		button.onClick = function(self,button)
 			print("blech")
 			if button == 'l' then
 				panels[i]()
 			end
 		end
-		anim:new{ table = button, key = 'x', finish = 10, style = 'quartOut', delay = (i-1)/2 }:play()
+		anim:new{ table = button, key = 'y', finish = i*25, style = 'quartOut', delay = (i-1)/2 }:play()
 	end
 end
 

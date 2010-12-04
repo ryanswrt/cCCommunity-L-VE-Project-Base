@@ -49,6 +49,7 @@ function goo.base:mousereleased() end
 function goo.base:keypressed() end
 function goo.base:keyreleased() end
 function goo.base:getAbsolutePos() return 0,0 end
+function goo.base:getAbsoluteSize() return 0,0 end
 function goo.base:getRelativePos() return 0,0 end
 function goo.base:getAbsoluteScale() return 1,1 end
 function goo.base:getRelativeScale() return 1,1 end
@@ -196,6 +197,11 @@ end
 function goo.object:setText( text )
 	self.text = text
 	self:updateBounds()
+end
+function goo.object:getAbsoluteSize( w, h )
+	local w, h = w or self.w, h or self.h
+	--local _w, _h = self.parent:getAbsoluteSize()
+	return (w*self.parent.xscale), (h*self.parent.yscale)
 end
 function goo.object:getAbsolutePos( x, y )
 	local x, y = x or self.x, y or self.y

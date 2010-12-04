@@ -1,0 +1,10 @@
+This is a base of implemented LÖVE libraries to build the CubeCreate community LÖVE game on.
+It is influenced heavily by the design of "Fistful of Beef" a Love Party submission for Ludum Dare 18
+
+Included Libraries:
+
+AnAl by Bart van Strien
+Goo by Luke Perkin
+Hump by Matthias Richter
+Sound Manager by Bart van Strien and Tommy Brunn
+
